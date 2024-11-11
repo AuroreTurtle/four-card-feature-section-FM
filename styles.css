@@ -42,11 +42,16 @@ p {
 	text-align: center;
 }
 
-.features {
+.features,
+.feature-builder-karma {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	gap: 25px;
+}
+
+.feature-builder-karma {
+	width: 100%;
 }
 
 .feature-supervisor,
@@ -106,4 +111,83 @@ svg {
 .attribution a {
 	text-decoration: none;
 	color: hsl(229, 6%, 66%);
+}
+
+/* Tablet */
+@media (min-width: 48em) {
+	.description {
+		width: 70%;
+		margin: 15px auto 60px auto;
+	}
+
+	.feature-supervisor,
+	.feature-builder,
+	.feature-karma,
+	.feature-calculator {
+		width: 299px;
+		padding: 30px 35px;
+	}
+
+	.feature-content {
+		height: 176px;
+		padding: 30px 35px;
+	}
+}
+
+/* Desktop */
+@media (min-width: 64em) {
+	main {
+		margin: 50px;
+	}
+
+	h1,
+	h2 {
+		font-size: 33px;
+	}
+
+	p {
+		font-size: 14px;
+	}
+
+	.description {
+		width: 50%;
+	}
+
+	.features {
+		flex-direction: row;
+		justify-content: center;
+	}
+
+	.feature-builder-karma {
+		width: 30%;
+	}
+
+	.feature-supervisor,
+	.feature-builder,
+	.feature-karma,
+	.feature-calculator {
+		width: 220px;
+	}
+}
+
+@media (min-width: 90em) {
+	.description {
+		width: 35%;
+	}
+
+	.features {
+		flex-direction: row;
+	}
+
+	.feature-builder-karma {
+		width: 29%;
+		gap: 30px;
+	}
+
+	.feature-supervisor,
+	.feature-builder,
+	.feature-karma,
+	.feature-calculator {
+		width: 280px;
+	}
 }
