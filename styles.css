@@ -47,49 +47,44 @@ p {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	gap: 25px;
-}
-
-.feature-builder-karma {
-	width: 100%;
+	gap: 30px;
 }
 
 .feature-supervisor,
 .feature-builder,
 .feature-karma,
 .feature-calculator {
-	border-radius: 10px;
-	width: 83.5%;
-	height: 180px;
+	border-radius: 4px 4px 10px 10px;
 	position: relative;
 	padding: 25px;
 	box-shadow: 0px 6px 10px hsl(230, 8%, 85%);
 }
 
-.feature-supervisor {
+.feature-supervisor::before,
+.feature-builder::before,
+.feature-karma::before,
+.feature-calculator::before {
+	content: "";
+	position: absolute;
+	inset: 0px 0.3px;
+	height: 3px;
+	border-radius: 30px 30px 0 0;
+}
+
+.feature-supervisor::before {
 	background-color: hsl(180, 62%, 55%);
 }
 
-.feature-builder {
+.feature-builder::before {
 	background-color: hsl(0, 78%, 62%);
 }
 
-.feature-karma {
+.feature-karma::before {
 	background-color: hsl(34, 97%, 64%);
 }
 
-.feature-calculator {
+.feature-calculator::before {
 	background-color: hsl(212, 86%, 64%);
-}
-
-.feature-content {
-	background-color: white;
-	border-radius: 0 0 10px 10px;
-	height: 176px;
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	padding: 25px;
 }
 
 .feature-text {
@@ -99,8 +94,8 @@ p {
 }
 
 svg {
-	position: absolute;
-	right: 30px;
+	display: block;
+	margin-left: auto;
 }
 
 .attribution {
@@ -113,24 +108,20 @@ svg {
 	color: hsl(229, 6%, 66%);
 }
 
+@media (min-width: 26.5em) {
+	.feature-supervisor,
+	.feature-builder,
+	.feature-karma,
+	.feature-calculator {
+		width: 300px;
+	}
+}
+
 /* Tablet */
 @media (min-width: 48em) {
 	.description {
 		width: 70%;
 		margin: 15px auto 60px auto;
-	}
-
-	.feature-supervisor,
-	.feature-builder,
-	.feature-karma,
-	.feature-calculator {
-		width: 299px;
-		padding: 30px 35px;
-	}
-
-	.feature-content {
-		height: 176px;
-		padding: 30px 35px;
 	}
 }
 
@@ -156,32 +147,25 @@ svg {
 	.features {
 		flex-direction: row;
 		justify-content: center;
+		gap: 35px;
 	}
 
 	.feature-builder-karma {
-		width: 30%;
+		gap: 35px;
 	}
 
 	.feature-supervisor,
 	.feature-builder,
 	.feature-karma,
 	.feature-calculator {
-		width: 220px;
+		width: 215px;
+		padding: 30px 25px;
 	}
 }
 
-@media (min-width: 90em) {
+@media (min-width: 78em) {
 	.description {
 		width: 35%;
-	}
-
-	.features {
-		flex-direction: row;
-	}
-
-	.feature-builder-karma {
-		width: 29%;
-		gap: 30px;
 	}
 
 	.feature-supervisor,
@@ -189,5 +173,6 @@ svg {
 	.feature-karma,
 	.feature-calculator {
 		width: 280px;
+		padding: 30px;
 	}
 }
